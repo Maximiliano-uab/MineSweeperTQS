@@ -21,6 +21,29 @@ public class Board {
 		
 	}
 	
+	public Board(int numMines, int maxX, int maxY, int test){
+		this.numMines = numMines;
+		this.maxX = maxX;
+		this.maxY = maxY;
+		
+		listSquares = new Square[maxX][maxY];
+		
+		createBoard();
+		listSquares[0][0].setTypeObject("mine");
+		setNumbers(0, 0);
+		//listSquares[0][1].setTypeObject("empty");
+		//setNumbers(0, 1);
+		listSquares[2][2].setTypeObject("mine");
+		setNumbers(2, 2);
+		listSquares[4][4].setTypeObject("mine");
+		setNumbers(4, 4);
+		
+	}
+	
+	public void setSquares(Square[][] listSquares) {
+		this.listSquares = listSquares;
+	}
+	
 	public int getNumMines() {return numMines;}
 	
 	public void setNumMines(int numMines ) {this.numMines = numMines;}
